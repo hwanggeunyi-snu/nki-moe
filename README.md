@@ -15,7 +15,7 @@ Round one of the competition focuses on Trn2. We will take submissions from Marc
 Round two of the competition focuses on Trn3. We will take submissions from April 14-24. Each of the top 15 teams from round one will receive access to a dedicated single-chip Trn3 instance. The evaluation environment will use Neuron SDK 2.28 with a single Trn3 chip.
 
 ## Submission guidelines
-1. Participants should plan to replace the `qwen_with_nki.py file with your own kernels and model code.
+1. Participants should plan to replace the `qwen_with_nki.py` file with your own kernels and model code.
 2. Participants are welcome to upload multiple files to accomplish this, it is not necessary to contain the submission within a single file.
 3. This file will be invoked by `main.py`, exactly in the same way contained within the repository.
 4. The evaluation environment will already have this repository cloned within a Neuron SDK 2.28 environment. Participants do not need to install any packages already contained within the repository.
