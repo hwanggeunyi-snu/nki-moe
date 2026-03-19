@@ -16,7 +16,7 @@ Round two of the competition focuses on Trn3. We will take submissions from Apri
 
 ## Submission guidelines
 1. Participants should plan to replace the `qwen_with_nki.py` file with your own kernels and model code.
-2. Participants are welcome to upload multiple files to accomplish this, it is not necessary to contain the submission within a single file.
+2. Participants **must contain their code within a single file**. The submission site will only accept one Python file per upload.
 3. This file will be invoked by `main.py`, exactly in the same way contained within the repository.
 4. The evaluation environment will already have this repository cloned within a Neuron SDK 2.28 environment. Participants do not need to install any packages already contained within the repository.
 5. The contest organizers will expose a submission url on March 23.
