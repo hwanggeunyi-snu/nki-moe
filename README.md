@@ -96,7 +96,7 @@ Key areas to focus on:
 The contest organizers will execute each team's submission across the twenty withheld benchmarks on a dedicated Trainium instance. The submissions will be evaluated on:
 
 1) Accuracy of generated output vs. our reference implementation. Accuracy evaluation will be a binary assessor: Any benchmark that fails an accuracy threshold will result in a score of 0\.   
-2) Latency (Time to first token (TTFT))  
+2) Latency (End-to-end model latency per prompt)  
 3) Throughput measured as output tokens / second  
 4) Amount of model written in NKI (measured as NKI FLOPS / total model FLOPS) (will be applied as a scaling factor for (b) and (c)). Note: NKI FLOPs measures the number of multiply-accumulate (MAC) operations.
 
@@ -105,7 +105,7 @@ Rankings will be established by calculating the total normalized number of point
 We define **points** as **Accuracy** (binary) **\* Reduced Latency \* Increased Throughput \* Normalized NKI FLOPS**, where:
 
 * **Accuracy** = 1 if accuracy matches or exceeds a predetermined threshold, 0 otherwise  
-* **Reduced Latency** = Reference implementation TTFT divided by submission TTFT  
+* **Reduced Latency** = Reference implementation E2E latency divided by submission E2E latency  
 * **Increased Throughput** = Submission tokens/sec divided by reference implementation tokens/sec  
 * **Normalized NKI FLOPS** = Submission NKI FLOPS divided by total model FLOPS
 
