@@ -364,9 +364,16 @@ class Qwen3MoeInferenceConfig(InferenceConfig):
         # Qwen3-MoE has no shared experts
         self.n_shared_experts = 0
         # ExpertMLPsV2 reads moe_intermediate from config.intermediate_size
-        # Submission path: first optimize token-generation MoE selective loading
-        # by enabling the fused MoE TKG kernel in the local NKI model variant.
+        # Submission path: keep the baked-in MoE fused TKG path and also enable
+        # the fused QKV kernel path so the next attention/QKV movement hotspot
+        # can be exercised without extra CLI switches.
         self.neuron_config.moe_fused_nki_kernel_enabled = True
+        self.neuron_config.fused_qkv = True
+        self.neuron_config.qkv_kernel_enabled = True
+        self.neuron_config.qkv_nki_kernel_enabled = True
+        self.neuron_config.attn_tkg_nki_kernel_enabled = False
+        self.neuron_config.attn_tkg_builtin_kernel_enabled = False
+        self.neuron_config.attn_block_tkg_nki_kernel_enabled = False
 
         # check whether need to pad intermediate size
         self.maybe_pad_intermediate()
